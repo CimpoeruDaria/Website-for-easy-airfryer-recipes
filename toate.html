@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retete rapide pentru airfryer</title>
+    
+    <link rel = "stylesheet" href = "style.css">
+    <link rel = "stylesheet" href = "search_bar.css">
+    <link rel = "stylesheet" href = "buttons.css">
+    <link rel = "stylesheet" href = "weekly_meals.css">
+</head>
+<body>
+
+    <section class="search-container">
+    <div class="search-wrapper">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        
+        <input type="text" id="recipe-search" placeholder="Caută o rețetă la airfryer... (ex: pui, cartofi, brioșe)" autocomplete="off">
+        
+        <button type="button" class="search-btn">Caută</button>
+    </div>
+</section>
+
+    <div class="quick-tags">
+    <button class="tag-btn active">Toate</button>
+    <button class="tag-btn">🍗 Pui</button>
+    <button class="tag-btn">🥔 Garnituri</button>
+    <button class="tag-btn">🥦 Quick & Healthy</button>
+    <button class="tag-btn">🍰 Deserturi</button>
+    <button class="tag-btn">⭐️ Pagina de Start</button>
+</div>
+
+<section class="weekly-highlights">
+    <div class="weekly-header">
+        <h2>🔥 Toate preparatele </h2>
+        <p>Cele mai simple și gustoase rețete la airfryer</p>
+    </div>
+
+    <div class="highlights-container">
+        <article class="highlight-card premium-banner">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop" alt="Coaste de porc" class="highlight-img">
+            <div class="highlight-overlay">
+                <span class="highlight-badge">⭐️ Recomandarea Săptămânii</span>
+                <h3>Coaste de Porc Glasate (Ultra Fragede)</h3>
+                <p>Se topesc în gură! Tehnica secretă prin care obții coaste perfecte la airfryer în sub 40 de minute.</p>
+                <div class="highlight-meta">
+                    <span>⏱️ 35 min</span>
+                    <span>🔥 180°C</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="highlight-card premium-banner">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop" alt="Somon cu legume" class="highlight-img">
+            <div class="highlight-overlay">
+                <span class="highlight-badge">🥦 Healthy Choice</span>
+                <h3>Somon cu Nuanțe de Lămâie și Sparanghel</h3>
+                <p>O cină rapidă, plină de nutrienți și gata cât ai zice pește.</p>
+                <div class="highlight-meta">
+                    <span>⏱️ 12 min</span>
+                    <span>🔥 190°C</span>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+    
+    <script src = "index.js"> </script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+.weekly-highlights {
+    max-width: 1100px;
+    margin: 40px auto 10px auto;
+    padding: 0 20px;
+}
+
+.weekly-header {
+    margin-bottom: 20px;
+}
+
+.weekly-header h2 {
+    font-size: 40px;
+    font-family: sans-serif, 'Inter', -apple-system, BlinkMacSystemFont;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.weekly-header p {
+    font-size: 20px;
+    color: #5c5e69;
+    font-family: sans-serif, 'Inter', -apple-system, BlinkMacSystemFont;
+}
+
+/* Containerul folosește Grid pentru a pune cele 2 bannere unul lângă altul */
+.highlights-container {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr; /* Primul card e mai lat decât al doilea (asimetrie premium) */
+    gap: 20px;
+}
+
+/* Pe ecrane mai mici (tablete/telefoane), le punem unul sub altul */
+@media (max-width: 768px) {
+    .highlights-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.highlight-card {
+    position: relative;
+    height: 380px; /* Înălțime fixă generoasă */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.highlight-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.highlight-card:hover .highlight-img {
+    transform: scale(1.03);
+}
+
+/* Gradientul întunecat de peste imagine care face textul alb lizibil */
+.highlight-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient de la transparent (sus) la negru opac 85% (jos) */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Împinge textul la baza cardului */
+    color: #ffffff;
+    /* Adăugat tranziție pentru o dispariție fluidă la hover */
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+}
+
+.highlight-badge {
+    align-self: flex-start; /* Se micșorează pe lățimea textului său */
+    background: #e25c34; /* Culoarea de accent portocalie */
+    color: #ffffff;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.highlight-overlay h3 {
+    font-size: 22px;
+    font-weight: 600;
+    padding: 4px 5px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    background: rgba(255, 255, 255, 0.121);
+    background-size: auto;
+    border-radius: 10px;
+    backdrop-filter: blur(1.3px);
+}
+
+.highlight-overlay p {
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.082);
+    padding: 4px 5px;
+    background-size: auto;
+    border-radius: 10px;
+    line-height: 1.5; /* Definim clar înălțimea unui rând (aprox. 20px) */
+    color: rgba(255, 255, 255, 0.93);
+    margin-bottom: 15px;
+    overflow: hidden;   /* Ascunde tot ce depășește cele 2 rânduri */
+    font-weight: 500;
+    backdrop-filter: blur(1.3px);
+}
+
+.highlight-meta {
+    display: flex;
+    gap: 15px;
+}
+
+.highlight-meta span {
+    font-size: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   STRATUL NOU: INGREDIENTE LA HOVER (INTEGRAT DIRECT)
+   ========================================================================== */
+
+.highlight-ingredients-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.781); /* Un fundal întunecat premium deep blue/gri */
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 5; /* Se așază deasupra textului vechi */
+}
+
+/* Titlul listei de ingrediente */
+.highlight-ingredients-overlay h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #e25c34; /* Portocaliul de accent */
+    margin-bottom: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+    font-family: sans-serif, 'Inter';
+}
+
+.highlight-ingredients-overlay ul {
+    list-style: none;
+}
+
+.highlight-ingredients-overlay ul li {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+    font-family: sans-serif, 'Inter';
+    font-weight: 500;
+}
+
+/* Bulinele portocalii custom */
+.highlight-ingredients-overlay ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #e25c34;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 0.6;
+}
+
+/* --- LOGICA DE INTERACȚIUNE LA HOVER --- */
+
+/* 1. Când punem mouse-ul pe card, afișăm ingredientele fluid */
+.highlight-card:hover .highlight-ingredients-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 2. În același timp, estompăm textul original și îl coborâm subtil */
+.highlight-card:hover .highlight-overlay {
+    opacity: 0;
+    transform: translateY(15px);
+}

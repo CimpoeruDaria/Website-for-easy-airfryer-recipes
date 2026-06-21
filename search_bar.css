@@ -1,0 +1,71 @@
+.search-container {
+    width: 100%;
+    max-width: 650px; 
+    margin: 60px auto 100px auto; /* Spațiere generoasă sus */
+    padding: 0 20px;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 6px 8px 6px 18px; 
+    border-radius: 50px; 
+    border: 1px solid #e1e1e6; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); 
+    transition: all 0.3s ease;
+}
+
+.search-wrapper:focus-within {
+    border-color: #e25c34;
+    box-shadow: 0 8px 25px rgba(226, 92, 52, 0.12); 
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    color: #9aa0a6; 
+    margin-right: 12px;
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+}
+
+.search-wrapper:focus-within .search-icon {
+    color: #e25c34; 
+}
+
+#recipe-search {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: inherit; 
+    font-size: 16px;
+    color: #1a1a1a;
+    background: transparent;
+}
+
+#recipe-search::placeholder {
+    color: #a0a5b1;
+}
+
+.search-btn {
+    background: #e25c34; 
+    color: white;
+    border: none;
+    outline: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.search-btn:hover {
+    background: #cb4f2a; 
+}
+
+.search-btn:active {
+    transform: scale(0.97); 
+}

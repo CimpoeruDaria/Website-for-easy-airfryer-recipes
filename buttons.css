@@ -1,0 +1,65 @@
+.quick-tags {
+    display: flex;
+    justify-content: center; /* Centrează butoanele pe desktop */
+    gap: 40px; /* Spațiu egal între pastile */
+    margin: 20px auto;
+    padding: 10px 20px;
+    max-width: 3000px;
+    
+    /* Optimizare mobil: dacă sunt prea multe tag-uri, se face scroll pe orizontală */
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none; /* Ascunde scrollbar-ul pe Firefox */
+}
+
+/* Ascunde scrollbar-ul pe Chrome, Safari și Edge pentru un look minimalist */
+.quick-tags::-webkit-scrollbar {
+    display: none;
+}
+
+/* Stilul de bază pentru fiecare pastilă (Buton inactiv) */
+.tag-btn {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: inherit;
+    color: #5c5e69;
+    background-color: #ffffff; /* Fundal alb curat */
+    padding: 10px 20px;
+    border-radius: 50px; /*rotunjeste colturile*/
+    border: 1px solid #e1e1e6;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    flex-shrink: 0; /* impiedica deformarea pe mobil */
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tag-btn:active {
+    transform: scale(0.97);
+}
+
+/* Efectul la hover pe butoane */
+.tag-btn:hover {
+    border-color: #e25c34;
+    color: #e25c34;
+    background-color: rgba(226, 92, 52, 0.03); /* Un fundal portocaliu extrem de șters */
+
+    transform: translateY(-1px);
+}
+
+/* Stilul pentru butonul activ/selectat (clasa .active din HTML) */
+.tag-btn.active {
+    background-color: #e25c34;
+    color: #ffffff;
+    border-color: #e25c34;
+    box-shadow: 0 6px 12px rgba(226, 92, 52, 0.2); 
+    transform: none;
+    
+}
+
+.tag-btn.active:hover{
+    background: #cb4f2a;
+
+    transform: translateY(-1.3px);
+}
